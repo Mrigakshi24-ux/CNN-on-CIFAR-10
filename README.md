@@ -17,7 +17,7 @@ Now we divide our big data into small chunks. We choose the batch size randomly 
 So we have defined our layer 1.
 It completely depends upon us how many Conv2D we want to define in our Sequential model. 
 After layer 1, we need to calculate the output size of our image. This can be done with the help of a formula: 
-                 * New height/width = ((Previous Height/width - Filter Size + 2xPadding)/Stride)+1
+ * New height/width = ((Previous Height/width - Filter Size + 2xPadding)/Stride)+1
 Just like layer 1, we will define our layer 2 and layer 3. We will manipulate the input and output channels accordingly. After our layer 3, we will define a fully connected layer(A layer in which all the neurons are connected to all the neurons in the previous layer) with nn.Linear. The paramaters for this layer will the dimensions of our final output image times the number of neurons in the previous layer. In this case, we have final image dimension as 4x4 and number of neurons in the previous layer were 512.
 
 After we wre done defining all the layers, we define the forward function for forward propagation. The output after the layer 3 need to be converted into a 1D array in order to feed it to the fully connected layer. So, we reshape it. 
